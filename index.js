@@ -31,15 +31,13 @@ var vCard = (function () {
                 this.mediaType = mediaType;
                 this.base64 = false;
             },
-
             /**
-             * Embed a photo from a file using base-64 encoding (not implemented yet)
-             * @param  {string} filename
+             * Embed a photo from base-64 encoding
+             * @param  {string} image
              */
-            embedFromFile: function(fileLocation) {
-              var imgData = fs.readFile(fileLocation);
-              this.url = imgData.toString('base64');
-              this.base64 = true;
+            embedFromBase64: function(image) {
+                this.url = image;
+                this.base64 = true;
             }
         };
     }
